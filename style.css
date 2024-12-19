@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 20px 70px; /* Fixed excessive padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for a modern look */
+}
+
+.todo-app h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 14px; /* Changed from font-weight to font-size */
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    color: #fff; /* Added text color for visibility */
+    transition: background 0.3s ease; /* Smooth hover effect */
+}
+
+button:hover {
+    background: #ff7967; /* Lighter shade on hover */
+}
+
+ul {
+    margin-top: 20px; /* Added space between input and task list */
+    padding: 0;
+}
+
+ul li {
+    position: relative; /* Needed for `::before` and `span` positioning */
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    border-bottom: 1px solid #edeef0; /* Optional divider for tasks */
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    top: 50%; /* Center vertically */
+    left: 8px;
+    transform: translateY(-50%);
+}
+
+ul li.checked {
+    color: #555; 
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url('images.jpeg'); /* Fixed URL quotes */
+}
+
+ul li span { /* Corrected selector from `ui` to `ul` */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}
